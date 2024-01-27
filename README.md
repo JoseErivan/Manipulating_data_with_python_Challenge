@@ -57,3 +57,68 @@ O programa vai mostrar informações sobre o funcionamento, inclusive se foi ou 
   Muito obrigado por testar meu programa, se encontrou algum erro ou algo que possa melhorar fique a vontade para compartilhar sua ideia!
 
 José Erivan Ramalho Ferreira Filho
+
+
+
+
+
+
+# English version from Readme
+
+## This is the Tunts.Rocks Technical Challenge.
+
+## The proposal is as follows:
+Create an application in a programming language of your choice (if you are applying for a position in a specific programming language, example: node.js programmer, use the specific language/technology of the position). The application must be able to read a Google Sheets spreadsheet, search for the necessary information, calculate and write the result in the spreadsheet.
+
+In my case I chose to use Python, as it is an excellent language for data manipulation.
+
+## Line of thinking:
+To develop the program, the first thing I did was separate my problem into smaller problems, which makes it easier to solve.
+
+1. The first point was a way to use the command line to obtain the name of the spreadsheet that contained the data. To do this, I used import sys, and argv to separate the name of the spreadsheet.
+
+2. The second point was to open the table using openpyxl.
+
+3. Then I needed to go through my file line by line applying my business rules, which are:
+
+              Calculate the situation of each student based on the average of the 3 tests (P1, P2 and P3), according to the table:
+              
+               Average (m) Situation:
+              
+               m<5 - Failed by Grade
+              
+               5<=m<7 - Final Exam
+              
+               m>=7 - Approved
+              
+               If the number of absences exceeds 25% of the total number of classes, the student will have the status "Failed due to Absence", regardless of the average. If the situation is "Final Exam", it is necessary to calculate the "Final Approval Grade" (naf) for each student according to the following formula:
+              
+               5 <= (m + naf)/2
+              
+               If the student's status is different from "Final Exam", fill in the "Grade for Final Approval" field with 0.
+              
+               Round the result to the next whole number (increase) if necessary. Use log lines to monitor application activities.
+5. And finally I needed to save the data written in the table.
+
+## Final result:
+Table after script execution:
+![image](https://github.com/JoseErivan/Manipulating_data_with_python_Challenge/assets/105927510/55f61e98-f767-4fb1-bc97-d06857124a9e)
+
+Program responses in the operating system console:
+![image](https://github.com/JoseErivan/Manipulating_data_with_python_Challenge/assets/105927510/373d6653-b458-497e-b1cc-dfa258c91acd)
+
+## Requirements installations to run the program:
+For the program to work, we first need to download the openpyxl library which is a Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files.
+
+The installation command is: pip install openpyxl. (Remember that Python must already be installed on the machine)
+
+## How to use the program:
+To use the program in the operating system terminal, type the following code:
+python + ./script.py + table_name_with_data (Remove the sum sign)
+
+The program will show information about its operation, including whether or not it was successful in its operation.
+
+## And that!
+   Thank you very much for testing my program, if you found any errors or something that could improve, feel free to share your idea!
+
+José Erivan Ramalho Ferreira Filho
